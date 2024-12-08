@@ -3,12 +3,12 @@ n, k = map(int, input().split())
 coin = []
 for _ in range(n):
     coin.append(int(input()))
-print(n, k)
-print(coin)
-cnt = 0
-for i in range(len(coin)):
-    if k % coin[n] == 0:
-        cnt += 1
-    if k > coin[i]
-    
+dp = [0] * (k+1)
+dp[0] = 1
+
+for c in coin:
+    for j in range(c,k+1):
+        dp[j] += dp[j-c]
+#x원을 만들 수 있는 경우의 수
 #보류
+print(dp[k])
