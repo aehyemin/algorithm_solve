@@ -5,20 +5,25 @@ int main () {
     scanf("%d %d", &n, &m);
     int basket[n];
 
-    for(int i=1; i<n+1; i++) {
-        basket[i] = i;
+    for(int i=0; i<n; i++) {
+        basket[i] = i+1;
     }
 
-    for(int j=1; j<m+1; j++) {
+    for(int j=0; j<m; j++) {
         scanf("%d %d", &k, &l);
-        for (int h=)
-        int tmp = basket[k];
-        basket[k] = basket[l];
-        basket[l] = tmp;
+        k--;
         l--;
+        while (k<l) {
+            int tmp = basket[k];
+            basket[k] = basket[l];
+            basket[l] = tmp;
+            k++;
+            l--;
+        }
+        
     }
 
     for(int o=0; o<n; o++) {
-        printf("%d", basket[o]);
+        printf("%d ", basket[o]);
     }
 }
