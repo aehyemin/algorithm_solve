@@ -1,13 +1,16 @@
-function fn(nums, k):
-    left = 0
-    curr = 0
-    answer = 0
-    for (int right = 0; right < nums.length; right++):
-        curr += nums[right]
-        while (curr > k):
-            curr -= nums[left]
-            left++
+class Solution:
+    def numSubarrayProductLessThanK(self, nums: List[int], k: int) -> int:
+        left = 0
+        cur = 1
+        ans = 0
+        for right in range(len(nums)):
+            if k <= 1:
+                return 0
+            cur *= nums[right]
 
-        answer = max(answer, right - left + 1)
+            while cur >= k:
+                cur /= nums[left]
+                left += 1
 
-    return answer
+            ans += right - left + 1
+        return ans
