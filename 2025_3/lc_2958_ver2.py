@@ -1,4 +1,4 @@
-rom collections import defaultdict
+from collections import defaultdict
 class Solution:
     def maxSubarrayLength(self, nums: List[int], k: int) -> int:
         hash = defaultdict(int)
