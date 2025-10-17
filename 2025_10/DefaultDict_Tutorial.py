@@ -12,3 +12,5 @@ for j in range(m):
     hey = input()
     if hey in n_word:
         print(" ".join(map(str, n_word[hey])))
+    else:
+        print(-1)
