@@ -1,0 +1,22 @@
+def solution(n):
+    cnt = 0
+    if n == 2:
+        return 1
+
+    #자기 자신으로만 나누어지는 수
+    for i in range(2, n+1):
+        tmp = False
+        for j in range(2, int(i**0.5)+1):
+            if i % j == 0:
+                tmp = True
+                break
+    
+        if tmp == False:
+            cnt += 1
+    return cnt
+            
+
+
+        
+    
+
